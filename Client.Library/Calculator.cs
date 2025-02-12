@@ -14,90 +14,41 @@ public class Calculator : ICalculator
 {
     public float Add(float a, params float[] b)
     {
-        ArgumentOutOfRangeException.ThrowIfEqual(float.NaN, a, nameof(a));
-        ArgumentOutOfRangeException.ThrowIfEqual(float.PositiveInfinity, a, nameof(a));
-        ArgumentOutOfRangeException.ThrowIfEqual(float.NegativeInfinity, a, nameof(a));
-
-        foreach (var i in b)
-        {
-            a += i;
-        }
-        return a;
-    }
-
-    public float Subtract(float a, params float[] b)
-    {
-        ArgumentOutOfRangeException.ThrowIfEqual(float.NaN, a, nameof(a));
-        ArgumentOutOfRangeException.ThrowIfEqual(float.PositiveInfinity, a, nameof(a));
-        ArgumentOutOfRangeException.ThrowIfEqual(float.NegativeInfinity, a, nameof(a));
-
-        foreach (var i in b)
-        {
-            a -= i;
-        }
-        return a;
-    }
-
-    public float Multiply(float a, params float[] b)
-    {
-        ArgumentOutOfRangeException.ThrowIfEqual(float.NaN, a, nameof(a));
-        ArgumentOutOfRangeException.ThrowIfEqual(float.PositiveInfinity, a, nameof(a));
-        ArgumentOutOfRangeException.ThrowIfEqual(float.NegativeInfinity, a, nameof(a));
-
-        foreach (var i in b)
-        {
-            a *= i;
-        }
-        return a;
+        throw new NotImplementedException();
     }
 
     public float Divide(float a, params float[] b)
     {
-        ArgumentOutOfRangeException.ThrowIfEqual(float.NaN, a, nameof(a));
-        ArgumentOutOfRangeException.ThrowIfEqual(float.PositiveInfinity, a, nameof(a));
-        ArgumentOutOfRangeException.ThrowIfEqual(float.NegativeInfinity, a, nameof(a));
-
-        foreach (var i in b)
-        {
-            ArgumentOutOfRangeException.ThrowIfEqual(i, 0, nameof(b));
-            a /= i;
-        }
-        return a;
-    }
-
-    public float Modulus(float a, float b)
-    {
-        ArgumentOutOfRangeException.ThrowIfEqual(float.NaN, a, nameof(a));
-        ArgumentOutOfRangeException.ThrowIfEqual(float.PositiveInfinity, a, nameof(a));
-        ArgumentOutOfRangeException.ThrowIfEqual(float.NegativeInfinity, a, nameof(a));
-
-        ArgumentOutOfRangeException.ThrowIfEqual(b, 0, nameof(b));
-        return a % b;
-    }
-
-    public float Power(float a, float b)
-    {
-        ArgumentOutOfRangeException.ThrowIfEqual(float.NaN, a, nameof(a));
-        ArgumentOutOfRangeException.ThrowIfEqual(float.PositiveInfinity, a, nameof(a));
-        ArgumentOutOfRangeException.ThrowIfEqual(float.NegativeInfinity, a, nameof(a));
-
-        return (float)Math.Pow(a, b);
+        throw new NotImplementedException();
     }
 
     public float Factorial(float a)
     {
-        ArgumentOutOfRangeException.ThrowIfLessThan(a, 0, nameof(a));
-        ArgumentOutOfRangeException.ThrowIfNotEqual(a % 1, 0, nameof(a));
+        throw new NotImplementedException();
+    }
 
-        if (a == 0 || a == 1)
-            return 1;
-        return a * Factorial(a - 1);
+    public float Modulus(float a, float b)
+    {
+        throw new NotImplementedException();
+    }
+
+    public float Multiply(float a, params float[] b)
+    {
+        throw new NotImplementedException();
+    }
+
+    public float Power(float a, float b)
+    {
+        throw new NotImplementedException();
     }
 
     public float SquareRoot(float a)
     {
-        ArgumentOutOfRangeException.ThrowIfLessThan(a, 0, nameof(a));
+        throw new NotImplementedException();
+    }
 
-        return (float)Math.Sqrt(a);
+    public float Subtract(float a, params float[] b)
+    {
+        throw new NotImplementedException();
     }
 }
