@@ -1,4 +1,6 @@
-﻿namespace CalculatorTests;
+﻿using Client.Library;
+
+namespace CalculatorTests;
 
 public class AddTests
 {

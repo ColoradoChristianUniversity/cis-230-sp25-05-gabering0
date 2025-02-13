@@ -1,3 +1,5 @@
+using Client.Library;
+
 namespace CalculatorTests;
 
 public class ModulusTests

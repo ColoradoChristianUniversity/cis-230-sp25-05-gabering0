@@ -1,6 +1,6 @@
-# Assignment 03 (Week 4)
+# Assignment 05
 
-A simple, interactive menu from an internet source.
+Implementing a simple Calculator.
 
 ![](Screenshot.gif)
 
@@ -18,27 +18,23 @@ This represents acceptance criteria that is true irrespective of assignment crit
 
 This represents acceptance criteria necessary for assignment completion.
 
-> **Regarding the API.** This is the URL to retrieve internet information: https://cis-230-sp25.azurewebsites.net/api/stringarray This has already been integrated in the `Client.Library` for you (by me) but I encourage you to look at the code as this is our first time to use internet information and our first time to deserialize information. Getting information from the internet is an incredibly common step in most applications; hopefully, this will reinforce how most complex tasks have been makde quite simple. In future assignments, you'll write this code yourself.
+1. All Unit Tests must pass (See `Calculator.cs`.)
 
-1. Ensure the project structure detailed below this list. 
-2. Ensure the application never exist, "Press any key to continue..." restarts.
-3. Show `Api.GetStringArrayAsync()` results as a numbered list/menu.
-4. Listen for and support `Up` and `Down` keys to change highlight.
-5. Listen for an support `Enter` to select and display the chosen item (with a border).
-6. Use `Screen.Print()` and `Screen.SurroundWithBorder()` I provided in `Client.Library`.
+   * You can run unit tests at the command line with `dotnet test`.
+   * You can run unit tests in VS Code using the Tests tab & click ▶️. 
 
 ## Bonus Acceptance Criteria  
 
 This represents optional acceptance criteria available for additional learning and bonus.
 
-1. Add "Loading..." when fetching from the API sournce. 
-2. Handle `Escape` key to exit the list and fetch a new one. 
-3. Support menu wrapping - pressing `Down` on the last menu item highlights the first.
-4. Support menu wrapping - pressing `Up` on the first menu item highlights the last.
+1. Implement `Addition` in the Console menu. (See `Program.cs`.)
+   * The first number for Addition is the `Addend`.
+   * The second number for Addition is the `Augend`.
+   * The symbol for Addition is the `+`.
 
 # Setup
 
-> **Existing code** You will notice that the repository already comes with the `Client.Library` project. Because of this, you do not need to create it. However, you will need to add a project reference to it from the `Client` project you create.
+> **Existing code** I will be providing to you `Calculator.cs` in `Client.Library`. Your goal is to implement its methods until unit tests pass. I have also provided `Program.cs`. I have also provided the Unit Tests for your `Calculator` class. 
 
 1. **Clone Your Repository**
 1. **Configure Debugging**
@@ -51,17 +47,20 @@ This represents optional acceptance criteria available for additional learning a
 It's up to you if you use the `dotnet` commands in the terminal of if you create the solution in the VS Code UI. Note that `gitignore` and `editorconfig` files can only be created using the `dotnet` commands in the terminal - there is, currently, no UI equivelent. 
 
 ```text
-Assignment03.sln
+Assignment05.sln
 ├── .gitignore
 ├── .editorconfig
 ├── Client
 │   ├── Client.csproj
-│   ├── Program.cs (This week, all of your code will be written here.)
+│   ├── Program.cs 
 │   └── References: Client.Library
-└── Client.Library
-    ├── Client.Library.csproj
-    ├── Screen.cs (I provided this; it holds console methods like: Print(), SurroundWithBorder(), and Listen())
-    └── Api.cs (I provided this; async methods like: GetStringArrayAsync())
+├── Client.Library
+│   ├── Client.Library.csproj
+│   └── Calculator.cs (This week, all of your code will be written here.)
+└── Client.Library.Tests
+    ├── Client.Library.Tests.csproj
+│   ├── {many unit test class files}
+│   └── References: Client.Library
 ```
 
 ### Now you can do your assignment

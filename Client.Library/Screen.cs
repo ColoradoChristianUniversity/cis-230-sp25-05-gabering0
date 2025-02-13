@@ -11,20 +11,15 @@ public static class Screen
         CursorVisible = false;
     }
 
-    public static void Print(string text, Point? topLeft = null, ConsoleColor? foreground = null, ConsoleColor? background = null)
+    public static void Print(string text, Point topLeft, ConsoleColor? foreground = null, ConsoleColor? background = null)
     {
-        Print(text, topLeft?.X, topLeft?.Y, foreground, background);
+        Print(text, topLeft.X, topLeft.Y, foreground, background);
     }
 
     public static void Print(string text, int? x = null, int? y = null, ConsoleColor? foreground = null, ConsoleColor? background = null)
     {
-        ArgumentException.ThrowIfNullOrEmpty(text, nameof(text));
-        ArgumentOutOfRangeException.ThrowIfLessThan(x ?? 0, 0, nameof(x));
-        ArgumentOutOfRangeException.ThrowIfGreaterThan(x ?? 0, WindowWidth - text.Length - 2, nameof(x));
-        ArgumentOutOfRangeException.ThrowIfLessThan(y ?? 0, 0, nameof(y));
-        ArgumentOutOfRangeException.ThrowIfGreaterThan(y ?? 0, WindowHeight - 3, nameof(y));
-
-        SetCursorPosition(x ?? CursorLeft, y ?? CursorTop);
+        var (Left, Top) = GetCursorPosition();
+        SetCursorPosition(x ?? Left, y ?? Top);
 
         ForegroundColor = foreground ?? ForegroundColor;
         BackgroundColor = background ?? BackgroundColor;
