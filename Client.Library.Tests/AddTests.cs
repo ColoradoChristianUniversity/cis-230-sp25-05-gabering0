@@ -12,10 +12,10 @@ public class AddTests
     }
 
     [Fact]
-    public void Add_SingleValue_ReturnsSameValue()
+    public void Add_SingleValue_ReturnsSameValue() //
     {
-        float result = _calculator.Add(5f);
-        Assert.Equal(5f, result);
+        float result = _calculator.Add(5f);//the f forces the number to be a float, similarly d for decimal
+        Assert.Equal(5f, result); //unique to only tests, this is asserting that 5 is the same as whatever the result
     }
 
     [Fact]

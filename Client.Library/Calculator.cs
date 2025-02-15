@@ -4,7 +4,15 @@ public class Calculator : ICalculator
 {
     public float Add(float a, params float[] b)
     {
-        throw new NotImplementedException();
+        ArgumentOutOfRangeException.ThrowIfEqual(a, float.NaN, "The first number cannot be NaN");
+        ArgumentOutOfRangeException.ThrowIfEqual(a, float.PositiveInfinity, "The first number cannot be Positive Infinity");
+        ArgumentOutOfRangeException.ThrowIfEqual(a, float.NegativeInfinity, "The first number cannot be Negative Infinity");
+        
+        foreach (var number in b)
+        {
+            a += number;
+        }
+        return a;
     }
 
     public float Divide(float a, params float[] b)
