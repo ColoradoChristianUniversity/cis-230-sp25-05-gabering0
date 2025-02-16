@@ -94,6 +94,9 @@ public class Calculator : ICalculator
     }
     public float Subtract(float a, params float[] b)
     {
+        if (float.IsNaN(a) || float.IsInfinity(a))
+            throw new ArgumentOutOfRangeException(nameof(a), "Invalid number provided.");
+
         if (b == null || b.Length == 0)
             return a;
 
