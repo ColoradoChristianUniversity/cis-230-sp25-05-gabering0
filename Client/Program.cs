@@ -72,7 +72,7 @@ Operation SelectOperation(out string firstNumberName, out string secondNumberNam
 {
     return operation switch
     {
-        Operation.Addition => ("Addend", "Addend", "+"),
+        Operation.Addition => ("Addend", "Augend", "+"),
         Operation.Subtraction => ("Minuend", "Subtrahend", "-"),
         Operation.Multiplication => ("Multiplicand", "Multiplier", "*"),
         Operation.Division => ("Dividend", "Divisor", "/"),
