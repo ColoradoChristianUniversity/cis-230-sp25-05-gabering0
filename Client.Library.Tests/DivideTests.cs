@@ -70,7 +70,8 @@ public class DivideTests
     [Fact]
     public void Divide_ThrowsException_WhenDividingByZero()
     {
-        Assert.Throws<ArgumentOutOfRangeException>(() => _calculator.Divide(10f, 0f));
+        Assert.Throws<DivideByZeroException>(() => _calculator.Divide(10f, 0f));
+        Assert.Throws<DivideByZeroException>(() => _calculator.Divide(10f, 2f, 0f));
     }
 
     [Fact]
