@@ -8,7 +8,7 @@ public class Calculator : ICalculator
         ArgumentOutOfRangeException.ThrowIfEqual(a, float.PositiveInfinity, "The first number cannot be Positive Infinity");
         ArgumentOutOfRangeException.ThrowIfEqual(a, float.NegativeInfinity, "The first number cannot be Negative Infinity");
         
-        foreach (var number in b)
+        foreach (var number in b) 
         {
             a += number;
         }
