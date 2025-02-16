@@ -72,6 +72,7 @@ Operation SelectOperation(out string firstNumberName, out string secondNumberNam
 {
     return operation switch
     {
+        Operation.Addition => ("Addend", "Addend", "+"),
         Operation.Subtraction => ("Minuend", "Subtrahend", "-"),
         Operation.Multiplication => ("Multiplicand", "Multiplier", "*"),
         Operation.Division => ("Dividend", "Divisor", "/"),
@@ -99,6 +100,7 @@ static float Calculate(Operation operation, float firstNumber, float secondNumbe
 
     return operation switch
     {
+        Operation.Addition => calcLogic.Add(firstNumber, secondNumber),
         Operation.Subtraction => calcLogic.Subtract(firstNumber, secondNumber),
         Operation.Multiplication => calcLogic.Multiply(firstNumber, secondNumber),
         Operation.Division => calcLogic.Divide(firstNumber, secondNumber),
@@ -110,9 +112,10 @@ static float Calculate(Operation operation, float firstNumber, float secondNumbe
 
 enum Operation
 {
+    Addition,
     Subtraction,
     Multiplication,
     Division,
     Power,
-    SquareRoot
+    SquareRoot,
 }
